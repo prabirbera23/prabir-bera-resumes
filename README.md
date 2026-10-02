@@ -2,6 +2,16 @@
 
 The published site contains a landing page and three independent HTML resume designs.
 
+## View and share your resumes
+
+**[Open the resume landing page](https://prabirbera23.github.io/prabir-bera-resumes/)** — use this link to share all three designs.
+
+| Design | Live resume | Edit Markdown |
+|---|---|---|
+| Clean two-page layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/clean.html) | [clean.md](content/clean.md) |
+| Original grey-sidebar layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/original.html) | [original.md](content/original.md) |
+| Blue two-column layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/blue.html) | [blue.md](content/blue.md) |
+
 ## Edit your resume on GitHub
 
 1. Open `content/clean.md`, `content/blue.md`, or `content/original.md`.

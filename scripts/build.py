@@ -227,6 +227,9 @@ def build():
             icons+='<g transform="translate(24,352)"><rect x="0" y="0" width="9" height="15" rx="1.2"/><path d="M0 3h9M0 12h9M3.5 1.5h2"/><circle cx="4.5" cy="13.5" r=".4"/></g>'
             icons+='<g transform="translate(22,381)"><circle cx="7" cy="7" r="6.5"/><ellipse cx="7" cy="7" rx="3" ry="6.5"/><path d="M.7 5h12.6M.7 9h12.6M7 .5v13"/></g></g>'
             source=first+icons+source[first_end:]
+            # Replace the complete footer line, including its source year fragments.
+            source=re.sub(r'<text\b([^>]*)>Resume Updated on:.*?</text>', r'<text id="resume-updated-date"\1>Resume Updated on:</text>', source, flags=re.S)
+            source=source.replace('</body>', '<script>function updateResumeDate(){const date=new Date();const month=date.toLocaleString("en-US",{month:"long"});document.getElementById("resume-updated-date").textContent="Resume Updated on: "+month+", "+date.getFullYear();}updateResumeDate();window.addEventListener("beforeprint",updateResumeDate);</script></body>')
             source=source.replace('</body>', '<script>function fitResumeText(){document.querySelectorAll("text[data-max-width]").forEach(t=>{const max=+t.dataset.maxWidth;const width=t.getComputedTextLength();if(width>max){t.setAttribute("font-size",(+t.getAttribute("font-size")*max/width).toFixed(3));}});}document.fonts.ready.then(fitResumeText);</script></body>')
         # Keep edited contact text and destinations consistent.
         source=re.sub(r'href="mailto:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="mailto:'+html.escape(html.unescape(m.group(2)),quote=True)+'"'+m.group(1)+m.group(2)+'</a>',source)
@@ -237,3 +240,4 @@ def build():
     (DEST/'.nojekyll').write_text('',encoding='utf-8')
 
 if __name__=='__main__':build()
+

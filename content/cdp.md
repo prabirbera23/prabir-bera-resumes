@@ -958,3 +958,24 @@ Serve as Associate Product Owner for Twilio Segment CDP, connecting customer dat
 - Coordinated with data, engineering and compliance teams on data quality, governance and consent, supporting reliable customer data use across the marketing ecosystem
 - Enabled marketers through training, briefing templates and a Quarterly Showcase, supporting clearer campaign requirements and adoption of CDP capabilities
 
+
+## core-skills
+
+**CDP and activation**
+Twilio Segment; unified customer profiles; source and destination integration; audience activation; audience exploration
+
+**Engagement and lifecycle**
+Braze; onboarding; reactivation; nurture; product launches; retention; loyalty; journey blueprints
+
+**Data and governance**
+Data quality; governance; consent management; data dictionaries; BigQuery; web analytics
+
+**CRM and automation**
+Salesforce CRM; HubSpot; Salesforce Marketing Cloud; Pardot
+
+**Advertising and tracking**
+Google Tag Manager; Meta; Google Ads; LinkedIn; Microsoft Advertising; Permutive
+
+**Product and enablement**
+Associate product ownership; stakeholder collaboration; playbooks; marketer training; campaign briefing
+

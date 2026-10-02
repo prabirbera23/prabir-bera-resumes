@@ -27,9 +27,7 @@ def original_typography(field, text):
     attrs['font-family']=family
     attrs['font-size']=str(size)
     attrs['font-style']='normal'
-    attrs['fill']='#176b76' if size>=14 and size<25 else '#172b3a'
-    if text=='ACHIEVEMENTS':attrs['fill']='#176b76'
-    if sidebar and text in ['MARKETING','TECHNOLOGY']:attrs['fill']='#176b76'
+    attrs['fill']='#ffffff' if sidebar or attrs.get('fill')=='rgb(255,255,255)' else '#111111'
     attrs['data-max-width']=str(max(15,(196 if sidebar else 594)-x))
     bullet=''
     if text.startswith('• '):
@@ -64,7 +62,7 @@ def table_typography(field, text):
         if len(glyph)>2:attrs.update(glyph[2])
         if attrs.get('font-family') not in ['Wingdings','Symbol']:
             attrs['font-family']='Arial, Helvetica, sans-serif'
-        attrs['fill']='#176b76' if float(attrs['font-size'])>=15 or field['text'] in ['TECHNICAL SKILLS:','INTERESTS:'] else '#172b3a'
+        attrs['fill']='#ffffff' if attrs.get('fill')=='rgb(255,255,255)' else '#111111'
         pieces.append('<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+html.escape(glyph[1])+'</text>')
     return ''.join(pieces)
 
@@ -140,7 +138,8 @@ def flow_tables(source, fields, values):
             width=cell['right']-cell['left'];height=cell['bottom']-cell['top']
             align='center' if ''.join(t[2] for t in tokens).strip() in ['COURSE NAME','PLACE'] else 'left'
             size=min(10.0,float(tokens[0][3]['font-size']))
-            rendered.append(f'<foreignObject x="{cell["left"]}" y="{cell["top"]}" width="{width}" height="{height}"><div xmlns="http://www.w3.org/1999/xhtml" class="flow-cell" role="cell" style="box-sizing:border-box;width:100%;height:100%;padding:2px 5px;font-family:Arial,Helvetica,sans-serif;font-size:{size}px;line-height:1.28;color:#172b3a;text-align:{align};overflow-wrap:break-word;">'+''.join(chunks).strip()+'</div></foreignObject>')
+            color='#ffffff' if tokens[0][3].get('fill')=='rgb(255,255,255)' else '#111111'
+            rendered.append(f'<foreignObject x="{cell["left"]}" y="{cell["top"]}" width="{width}" height="{height}"><div xmlns="http://www.w3.org/1999/xhtml" class="flow-cell" role="cell" style="box-sizing:border-box;width:100%;height:100%;padding:2px 5px;font-family:Arial,Helvetica,sans-serif;font-size:{size}px;line-height:1.28;color:{color};text-align:{align};overflow-wrap:break-word;">'+''.join(chunks).strip()+'</div></foreignObject>')
         # Merge heading/footer fragments so no line retains per-letter positioning.
         rows={}
         for token in outside:rows.setdefault(round(token[1],2),[]).append(token)
@@ -194,22 +193,36 @@ def build():
             source=re.sub(r'<image x="0" y="0" width="210.55" height="792"[^>]*/?>','',source)
         if name=='original':
             source=flow_tables(source,fields,values)
-            source=source.replace('background:#e9edf0','background:#eaf0f3').replace('background:#505050','background:#176b76')
+            source=source.replace('background:#e9edf0','background:#333333')
             def palette(m):
                 tag=m.group()
-                tag=tag.replace('fill="rgb(128,128,128)"','fill="#edf3f5"').replace('fill="rgb(127,127,127)"','fill="#edf3f5"')
-                tag=tag.replace('stroke="rgb(191,191,191)"','stroke="#d5e0e4"').replace('stroke="rgb(128,128,128)"','stroke="#d5e0e4"')
-                coords=re.search(r'd="[ML] ([\d.]+)',tag)
-                if coords and 215<float(coords.group(1))<245:tag=tag.replace('fill="#edf3f5"','fill="#176b76"')
                 path_data=re.search(r'd="([^"]+)"',tag)
                 if path_data:
                     points=[float(v) for v in re.findall(r'-?\d+\.\d+',path_data.group(1))]
                     if len(points)>=4:
                         xs=points[::2];ys=points[1::2]
-                        if max(xs)<210 and max(xs)-min(xs)<30 and max(ys)-min(ys)<35:
-                            tag=tag.replace('fill="rgb(255,255,255)"','fill="#176b76"')
+                        if max(xs)<=211 and max(xs)-min(xs)>40:
+                            tag=tag.replace('fill="rgb(128,128,128)"','fill="#949494"').replace('fill="rgb(127,127,127)"','fill="#949494"')
                 return tag
             source=re.sub(r'<path\b[^>]*>',palette,source)
+            # Replace the small raster contact icons with scalable outline drawings.
+            first_end=source.index('</svg>')
+            first=source[:first_end]
+            first=re.sub(r'<image\b[^>]*>',lambda m:'' if re.search(r'\bx="21\.6"',m.group()) else m.group(),first)
+            def remove_old_phone(m):
+                tag=m.group();data=re.search(r'd="([^"]+)"',tag)
+                if data:
+                    points=[float(v) for v in re.findall(r'-?\d+\.\d+',data.group(1))]
+                    if len(points)>=4:
+                        xs=points[::2];ys=points[1::2]
+                        if min(xs)>=20 and max(xs)<=38 and min(ys)>=345 and max(ys)<=373:return ''
+                return tag
+            first=re.sub(r'<path\b[^>]*>',remove_old_phone,first)
+            icons='<g class="contact-outline-icons" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">'
+            icons+='<g transform="translate(22,325)"><circle cx="7" cy="7" r="6.5"/><circle cx="7" cy="7" r="3"/><path d="M10 4v5c0 2 3 2 3-1"/></g>'
+            icons+='<g transform="translate(24,352)"><rect x="0" y="0" width="9" height="15" rx="1.2"/><path d="M0 3h9M0 12h9M3.5 1.5h2"/><circle cx="4.5" cy="13.5" r=".4"/></g>'
+            icons+='<g transform="translate(22,381)"><circle cx="7" cy="7" r="6.5"/><ellipse cx="7" cy="7" rx="3" ry="6.5"/><path d="M.7 5h12.6M.7 9h12.6M7 .5v13"/></g></g>'
+            source=first+icons+source[first_end:]
             source=source.replace('</body>', '<script>function fitResumeText(){document.querySelectorAll("text[data-max-width]").forEach(t=>{const max=+t.dataset.maxWidth;const width=t.getComputedTextLength();if(width>max){t.setAttribute("font-size",(+t.getAttribute("font-size")*max/width).toFixed(3));}});}document.fonts.ready.then(fitResumeText);</script></body>')
         # Keep edited contact text and destinations consistent.
         source=re.sub(r'href="mailto:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="mailto:'+html.escape(html.unescape(m.group(2)),quote=True)+'"'+m.group(1)+m.group(2)+'</a>',source)

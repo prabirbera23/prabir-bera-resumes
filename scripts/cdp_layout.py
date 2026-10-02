@@ -27,10 +27,14 @@ def compact_cdp(source):
     acc=re.search(r'<table class="accenture-table">.*?</table>',pages[2],re.S)[0]
     style='''<style>.cdp-flow{padding:25px 32px;box-sizing:border-box;font:9px/1.25 Arial,Helvetica,sans-serif;color:#172b3a}.cdp-flow h2{font-size:13px;color:#176b76;margin:0 0 12px}.cdp-flow h3{font-size:12px;color:#176b76;margin:12px 0 6px}.compact-table{margin-bottom:12px;border-top:.5px solid #555;border-left:.5px solid #555}.compact-row{display:flex}.compact-cell{box-sizing:border-box;border-right:.5px solid #555;border-bottom:.5px solid #555;padding:3px 4px;overflow-wrap:break-word}.company-row{background:#edf3f5}.cdp-flow .accenture-table{width:100%;border-collapse:collapse;table-layout:fixed;font:inherit;margin-bottom:12px}.cdp-flow .accenture-table th,.cdp-flow .accenture-table td{border:.5px solid #555;padding:3px 4px;text-align:left;vertical-align:top}.cdp-flow ul{margin:0;padding-left:12px}.cdp-flow li{margin-bottom:3px}</style>'''
     def page(content):return '<section class="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" width="100%" height="100%"><foreignObject width="612" height="792"><div xmlns="http://www.w3.org/1999/xhtml" class="cdp-flow">'+style+content+'</div></foreignObject></svg></section>'
-    second=page('<h2>PROFESSIONAL EXPERIENCE — CONTINUED</h2>'+acc+''.join(older[:2]))
+    # Use the remaining page-two space for the next role's header rows.
+    shavo_rows=re.findall(r'<div class="compact-row.*?</div></div>',older[3],re.S)
+    shavo_start='<div class="compact-table">'+''.join(shavo_rows[:3])+'</div>'
+    shavo_end='<div class="compact-table">'+shavo_rows[0].replace('SHAVO TECHNOLOGIES PVT. LTD.','SHAVO TECHNOLOGIES PVT. LTD. — CONTINUED')+''.join(shavo_rows[3:])+'</div>'
+    second=page('<h2>PROFESSIONAL EXPERIENCE — CONTINUED</h2>'+acc+''.join(older[:3])+shavo_start)
     footer=re.search(r'<svg\b[^>]*>(.*?)</svg>',pages[4],re.S)[1]
     footer=re.sub(r'<foreignObject\b.*?</foreignObject>','',footer,flags=re.S)
     footer='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 610 612 182" style="width:100%;height:164px">'+footer+'</svg>'
-    third=page('<style>.cdp-flow{font-size:8.5px;line-height:1.2}.compact-cell{padding:2px 4px}.compact-table{margin-bottom:9px}.cdp-flow h3{margin:9px 0 5px}</style>'+''.join(older[2:])+last[0]+'<h3>PROFESSIONAL TRAINING / DEVELOPMENT</h3>'+last[1]+'<h3>TECHNICAL SKILLS</h3>'+last[2]+footer)
+    third=page('<style>.cdp-flow{font-size:8.5px;line-height:1.2}.compact-cell{padding:2px 4px}.compact-table{margin-bottom:9px}.cdp-flow h3{margin:9px 0 5px}</style>'+shavo_end+last[0]+'<h3>PROFESSIONAL TRAINING / DEVELOPMENT</h3>'+last[1]+'<h3>TECHNICAL SKILLS</h3>'+last[2]+footer)
     return pages[0]+'<section class="page">'+pages[1]+second+third+source[source.rfind('</section>')+10:]
 

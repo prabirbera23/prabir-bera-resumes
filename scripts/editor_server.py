@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import secrets
+import socket
 import threading
 import urllib.request
 import urllib.error
@@ -33,6 +34,11 @@ def github(path, token, method='GET', body=None):
 def canonical(data):return json.dumps(data,sort_keys=True,ensure_ascii=False)
 
 class EditorServer(ThreadingHTTPServer):
+    allow_reuse_address=False
+    def server_bind(self):
+        if hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
+            self.socket.setsockopt(socket.SOL_SOCKET,socket.SO_EXCLUSIVEADDRUSE,1)
+        super().server_bind()
     def __init__(self, port):
         super().__init__(('127.0.0.1',port),Handler)
         self.origin='http://127.0.0.1:'+str(self.server_port)
@@ -66,9 +72,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self.valid_host():return self.reply(403,{'error':'Invalid editor address.'})
         path=urllib.parse.urlsplit(self.path).path
+        if path=='/api/health':return self.reply(200,{'app':'prabir-resume-editor'})
         if path in ('/','/editor.js','/editor.css'):
             name={'/':'index.html'}.get(path,path[1:]);kind={'index.html':'text/html','editor.js':'text/javascript','editor.css':'text/css'}[name]
-            return self.reply(200,(ROOT/'editor/public'/name).read_bytes(),kind)
+            return self.reply(200,(ROOT/'editor/public'/name).read_bytes(),kind,cookie='resume_session='+self.server.session+'; HttpOnly; SameSite=Strict; Path=/' if path=='/' else None)
         if not self.authenticated():return self.reply(401,{'error':'Open the editor using Start Resume Editor.'})
         if path=='/api/state':return self.reply(200,self.server.state())
         if path=='/api/published':
@@ -124,11 +131,17 @@ class Handler(BaseHTTPRequestHandler):
         except (OSError,KeyError,TypeError):return self.reply(500,{'error':'The operation could not complete. Your draft has not been discarded.'})
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);parser.add_argument('--no-browser',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8766);parser.add_argument('--no-browser',action='store_true');args=parser.parse_args()
     try:server=EditorServer(args.port)
-    except OSError:raise SystemExit('The editor is already running, or port 8765 is busy. Close the other editor window and try again.')
+    except OSError:
+        try:
+            with urllib.request.urlopen('http://127.0.0.1:'+str(args.port)+'/api/health',timeout=3) as response:health=json.load(response)
+            if health.get('app')!='prabir-resume-editor':raise ValueError()
+        except (OSError,ValueError):raise SystemExit('Another application is using the editor port. Close it and try again.')
+        if not args.no_browser:webbrowser.open('http://127.0.0.1:'+str(args.port)+'/')
+        raise SystemExit(0)
     print('Resume editor is running privately on this computer. Close this window to stop it.',flush=True)
-    if not args.no_browser:webbrowser.open(server.origin+'/#key='+server.bootstrap)
+    if not args.no_browser:webbrowser.open(server.origin+'/')
     try:server.serve_forever()
     except KeyboardInterrupt:pass
     finally:server.token=None;server.server_close()

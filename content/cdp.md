@@ -940,3 +940,21 @@ Resume Updated on: February -
 
 2026
 
+
+## current-role
+
+**MARKETING TECHNOLOGY ASSOCIATE MANAGER**
+**SPRINGER NATURE | PUNE**
+April 2024 – Present
+
+Serve as Associate Product Owner for Twilio Segment CDP, connecting customer data with marketing activation. Partner with marketing, data, engineering and compliance teams to deliver lifecycle use cases and improve customer experience.
+
+- Integrated 16+ data sources into Twilio Segment and connected 9+ downstream platforms, enabling multi-channel campaigns based on unified customer profiles
+- Delivered onboarding, reactivation, lifecycle nurture, product launch, retention and growth, and loyalty use cases, supporting a 12% improvement in engagement, conversion and retention across 4 markets
+- Built reusable playbooks and journey blueprints, reducing campaign setup by 70% and making lifecycle campaigns easier for marketers to deploy
+- Connected customer data with activation across Braze, Salesforce, HubSpot and advertising platforms, enabling coordinated engagement across owned and paid channels
+- Automated the CDP Data Dictionary to provide a reusable reference for customer data definitions and support consistent interpretation across teams
+- Built an Audience Explorer platform for Marketing Planning and Strategy teams, enabling audience exploration to inform campaign planning
+- Coordinated with data, engineering and compliance teams on data quality, governance and consent, supporting reliable customer data use across the marketing ecosystem
+- Enabled marketers through training, briefing templates and a Quarterly Showcase, supporting clearer campaign requirements and adoption of CDP capabilities
+

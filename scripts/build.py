@@ -161,6 +161,7 @@ def build():
         for m in re.finditer(pattern,md,re.M|re.S):
             if m.group(1) in values:raise ValueError('Duplicate field '+m.group(1))
             values[m.group(1)]=m.group(2).strip()
+        current_role=values.pop('current-role',None) if name=='cdp' else None
         if name in ['original','cdp']:
             fields={}
             for part in sorted((ROOT/'templates'/'original-fields').glob('*.json')):
@@ -170,6 +171,11 @@ def build():
         if set(values)!=set(fields):raise ValueError(f'{name}: missing or unknown field IDs: {set(values)^set(fields)}')
         source=(ROOT/'templates'/('original.html' if name=='cdp' else f'{name}.html')).read_text(encoding='utf-8')
         if name=='cdp':source=re.sub(r'<title>.*?</title>','<title>Prabir Bera | CDP and Marketing Data Resume</title>',source)
+        if current_role:
+            for key,field in fields.items():
+                if key.startswith('page-1-') and not field.get('sidebar',False) and int(key.split('-')[-1])>=34:
+                    old_y=float(field['attrs']['y'])
+                    field['attrs']['y']=str(365+(old_y-365)*.9+45 if int(key.split('-')[-1])<55 else old_y+22)
         sidebar_changed=False
         for key,field in fields.items():
             text=values[key]
@@ -189,11 +195,18 @@ def build():
                 attrs=field['attrs'].copy()
                 replacement='<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+html.escape(text.replace('\n',' '))+'</text>'
                 sidebar_changed |= field.get('sidebar',False)
+            if current_role and key.startswith('page-1-') and not field.get('sidebar',False) and int(key.split('-')[-1])<34:replacement=''
             source=source.replace('{{'+key+'}}',replacement)
         if sidebar_changed or name in ['original','cdp']:
             source=re.sub(r'<image x="0" y="0" width="210.55" height="792"[^>]*/?>','',source)
         if name in ['original','cdp']:
             source=flow_tables(source,fields,values)
+            if current_role:
+                parts=current_role.split('\n\n')
+                header=parts[0].splitlines()
+                body='<h2>'+inline(header[0])+'</h2><p class="company">'+inline(header[1])+'</p><p class="date">'+inline(header[2])+'</p><p>'+inline(parts[1])+'</p><ul>'+''.join('<li>'+inline(line[2:])+'</li>' for line in parts[2].splitlines())+'</ul>'
+                block='<foreignObject x="258" y="28" width="341" height="370"><div xmlns="http://www.w3.org/1999/xhtml" class="cdp-current-role" style="font-family:Arial,Helvetica,sans-serif;font-size:9.3px;line-height:1.22;color:#172b3a"><style>.cdp-current-role h2{font-size:14px;color:#176b76;margin:0 0 4px}.cdp-current-role p{margin:0 0 4px}.cdp-current-role .company{margin-bottom:3px}.cdp-current-role .date{color:#52616c}.cdp-current-role ul{margin:0;padding-left:13px}.cdp-current-role li{margin-bottom:3px}</style>'+body+'</div></foreignObject>'
+                source=source.replace('</svg>',block+'</svg>',1)
             source=re.sub(r'<image x="458\.2"[^>]*>', '', source)
             source=re.sub(r'<path d="M 458\.0700 706\.0250[^>]*>\s*</path>', '', source)
             source=re.sub(r'<text\b[^>]*>\(Scan to see my online profile on LinkedIn\).*?</text>', '', source, flags=re.S)
@@ -213,6 +226,8 @@ def build():
                         xs=points[::2];ys=points[1::2]
                         if max(xs)<210 and max(xs)-min(xs)<30 and max(ys)-min(ys)<35:
                             tag=tag.replace('fill="rgb(255,255,255)"','fill="#176b76"')
+                if current_role and path_data and len(points)>=4 and 215<=min(xs) and max(xs)<=245 and min(ys)>350 and max(ys)-min(ys)<35:
+                    tag=tag.replace('<path ', '<path transform="translate(0,'+('22' if min(ys)>590 else '45')+')" ')
                 return tag
             source=re.sub(r'<path\b[^>]*>',palette,source)
             # Replace the small raster contact icons with scalable outline drawings.

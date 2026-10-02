@@ -1,0 +1,733 @@
+{
+  "version": 1,
+  "resume": "cdp",
+  "groups": [
+    {
+      "title": "Profile, contact & education",
+      "fields": [
+        {
+          "id": "f001",
+          "label": "Contact heading",
+          "type": "text",
+          "value": "C O N T A C T"
+        },
+        {
+          "id": "f002",
+          "label": "Email address",
+          "type": "text",
+          "value": "Prabirjob23@gmail.com"
+        },
+        {
+          "id": "f003",
+          "label": "Phone number",
+          "type": "text",
+          "value": "+91 99752 888 22"
+        },
+        {
+          "id": "f004",
+          "label": "LinkedIn URL",
+          "type": "text",
+          "value": "linkedin.com/in/prabirbera"
+        },
+        {
+          "id": "f005",
+          "label": "Location",
+          "type": "text",
+          "value": "Mumbai, India"
+        },
+        {
+          "id": "f006",
+          "label": "Education heading",
+          "type": "text",
+          "value": "E D U C A T I O N"
+        },
+        {
+          "id": "f007",
+          "label": "Master’s degree — title",
+          "type": "text",
+          "value": "MASTER’S IN COMPUTER"
+        },
+        {
+          "id": "f008",
+          "label": "Master’s degree — institution",
+          "type": "text",
+          "value": "MANAGEMENT (PUNE UNVERSITY)"
+        },
+        {
+          "id": "f009",
+          "label": "Master’s degree — qualification",
+          "type": "text",
+          "value": "Master"
+        },
+        {
+          "id": "f010",
+          "label": "Master’s degree — year",
+          "type": "text",
+          "value": "2012"
+        },
+        {
+          "id": "f011",
+          "label": "Postgraduate diploma — title",
+          "type": "text",
+          "value": "PGDM IN MARKETING"
+        },
+        {
+          "id": "f012",
+          "label": "Postgraduate diploma — qualification",
+          "type": "text",
+          "value": "Diploma"
+        },
+        {
+          "id": "f013",
+          "label": "Postgraduate diploma — year",
+          "type": "text",
+          "value": "2012"
+        },
+        {
+          "id": "f014",
+          "label": "First name",
+          "type": "text",
+          "value": "PRABIR"
+        },
+        {
+          "id": "f015",
+          "label": "Last name",
+          "type": "text",
+          "value": "BERA"
+        },
+        {
+          "id": "f016",
+          "label": "Headline — first line",
+          "type": "text",
+          "value": "CUSTOMER DATA"
+        },
+        {
+          "id": "f017",
+          "label": "Headline — second line",
+          "type": "text",
+          "value": "& MARKETING"
+        }
+      ]
+    },
+    {
+      "title": "Springer Nature — current role",
+      "fields": [
+        {
+          "id": "f018",
+          "label": "Job title",
+          "type": "text",
+          "value": "**MARKETING TECHNOLOGY ASSOCIATE MANAGER**"
+        },
+        {
+          "id": "f019",
+          "label": "Company & location",
+          "type": "text",
+          "value": "**SPRINGER NATURE | PUNE**"
+        },
+        {
+          "id": "f020",
+          "label": "Dates",
+          "type": "text",
+          "value": "April 2024 – Present"
+        },
+        {
+          "id": "f021",
+          "label": "Role overview",
+          "type": "text",
+          "value": "Serve as Associate Product Owner for Twilio Segment CDP, connecting customer data with marketing activation. Partner with marketing, data, engineering and compliance teams to deliver lifecycle use cases and improve customer experience."
+        },
+        {
+          "id": "f022",
+          "label": "Responsibilities",
+          "type": "list",
+          "value": [
+            "Integrated 16+ data sources into Twilio Segment and connected 9+ downstream platforms, enabling multi-channel campaigns based on unified customer profiles",
+            "Delivered onboarding, reactivation, lifecycle nurture, product launch, retention and growth, and loyalty use cases, supporting a 12% improvement in engagement, conversion and retention across 4 markets",
+            "Built reusable playbooks and journey blueprints, reducing campaign setup by 70% and making lifecycle campaigns easier for marketers to deploy",
+            "Connected customer data with activation across Braze, Salesforce, HubSpot and advertising platforms, enabling coordinated engagement across owned and paid channels",
+            "Automated the CDP Data Dictionary to provide a reusable reference for customer data definitions and support consistent interpretation across teams",
+            "Built an Audience Explorer platform for Marketing Planning and Strategy teams, enabling audience exploration to inform campaign planning",
+            "Coordinated with data, engineering and compliance teams on data quality, governance and consent, supporting reliable customer data use across the marketing ecosystem",
+            "Enabled marketers through training, briefing templates and a Quarterly Showcase, supporting clearer campaign requirements and adoption of CDP capabilities"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Springer Nature — achievements",
+      "fields": [
+        {
+          "id": "f023",
+          "label": "Achievements (one per line)",
+          "type": "text",
+          "value": "[Achievement 1 — to be added]\n[Achievement 2 — to be added]"
+        }
+      ]
+    },
+    {
+      "title": "Core skills",
+      "fields": [
+        {
+          "id": "f024",
+          "label": "Skill group 1",
+          "type": "text",
+          "value": "**CDP and activation**"
+        },
+        {
+          "id": "f025",
+          "label": "CDP and activation",
+          "type": "text",
+          "value": "Twilio Segment; unified customer profiles; source and destination integration; audience activation; audience exploration"
+        },
+        {
+          "id": "f026",
+          "label": "Skill group 2",
+          "type": "text",
+          "value": "**Engagement and lifecycle**"
+        },
+        {
+          "id": "f027",
+          "label": "Engagement and lifecycle",
+          "type": "text",
+          "value": "Braze; onboarding; reactivation; nurture; product launches; retention; loyalty; journey blueprints"
+        },
+        {
+          "id": "f028",
+          "label": "Skill group 3",
+          "type": "text",
+          "value": "**Data and governance**"
+        },
+        {
+          "id": "f029",
+          "label": "Data and governance",
+          "type": "text",
+          "value": "Data quality; governance; consent management; data dictionaries; BigQuery; web analytics"
+        },
+        {
+          "id": "f030",
+          "label": "Skill group 4",
+          "type": "text",
+          "value": "**CRM and automation**"
+        },
+        {
+          "id": "f031",
+          "label": "CRM and automation",
+          "type": "text",
+          "value": "Salesforce CRM; HubSpot; Salesforce Marketing Cloud; Pardot"
+        },
+        {
+          "id": "f032",
+          "label": "Skill group 5",
+          "type": "text",
+          "value": "**Advertising and tracking**"
+        },
+        {
+          "id": "f033",
+          "label": "Advertising and tracking",
+          "type": "text",
+          "value": "Google Tag Manager; Meta; Google Ads; LinkedIn; Microsoft Advertising; Permutive"
+        },
+        {
+          "id": "f034",
+          "label": "Skill group 6",
+          "type": "text",
+          "value": "**Product and enablement**"
+        },
+        {
+          "id": "f035",
+          "label": "Product and enablement",
+          "type": "text",
+          "value": "Associate product ownership; stakeholder collaboration; playbooks; marketer training; campaign briefing"
+        }
+      ]
+    },
+    {
+      "title": "Accenture",
+      "fields": [
+        {
+          "id": "f036",
+          "label": "Company / client",
+          "type": "text",
+          "value": "**ACCENTURE — Ecommerce Client**"
+        },
+        {
+          "id": "f037",
+          "label": "From",
+          "type": "text",
+          "value": "December 2020"
+        },
+        {
+          "id": "f038",
+          "label": "To",
+          "type": "text",
+          "value": "April 2024"
+        },
+        {
+          "id": "f039",
+          "label": "Duration",
+          "type": "text",
+          "value": "3 Years 4 Months"
+        },
+        {
+          "id": "f040",
+          "label": "Job title",
+          "type": "text",
+          "value": "SFMC / PARDOT TECHNICAL LEAD"
+        },
+        {
+          "id": "f041",
+          "label": "Responsibilities",
+          "type": "list",
+          "value": [
+            "Led end-to-end SFMC and Pardot implementations, designing complex Journey Builder workflows and audience segmentation using SQL and Automation Studio.",
+            "Built and personalized email and SMS campaigns using Content Builder, AMPscript, and CloudPages (HTML, CSS, JavaScript).",
+            "Provided Technical Leadership and troubleshooting across marketing automation platforms to ensure campaign quality and platform stability.",
+            "Led and mentored a global marketing automation team, overseeing delivery, quality checks, and training of new resources.",
+            "Partnered with global stakeholders to support campaign strategy, prototyping, testing, and ongoing operational support."
+          ]
+        },
+        {
+          "id": "f042",
+          "label": "Achievements",
+          "type": "list",
+          "value": [
+            "I was honored to receive the \"Out of The Box Thinker\" Award from the client in recognition of my invaluable contribution to the establishment of a “Knowledge-sharing Hub”.",
+            "I was honored with the \"Star Innovation Individual\" award by Accenture for exceptional innovation and client empowerment.",
+            "I developed an “Automation Error Dashboard” integrating Power BI with SFMC, optimizing Salesforce Marketing Cloud's error resolution and ensuring uninterrupted business operations.",
+            "I developed an SFMC tool for effortlessly finding a Data Extensions within a Business Unit."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CAPGEMINI",
+      "fields": [
+        {
+          "id": "f043",
+          "label": "Company Name:",
+          "type": "text",
+          "value": "** CAPGEMINI**"
+        },
+        {
+          "id": "f044",
+          "label": "From:",
+          "type": "text",
+          "value": "January 2018"
+        },
+        {
+          "id": "f045",
+          "label": "To:",
+          "type": "text",
+          "value": "December 2020"
+        },
+        {
+          "id": "f046",
+          "label": "Duration:",
+          "type": "text",
+          "value": "3 Years"
+        },
+        {
+          "id": "f047",
+          "label": "Designation:",
+          "type": "text",
+          "value": "CAMPAIGN MANAGER (GLOBAL)"
+        },
+        {
+          "id": "f048",
+          "label": "Responsibilities",
+          "type": "text",
+          "value": "I developed, tested, and executed marketing automation campaigns aligned with client objectives. This included creating drip, nurture, batch, and trigger campaigns, setting up events, building programs, implementing lead scoring systems, and leveraging recipient data for personalized communications."
+        },
+        {
+          "id": "f049",
+          "label": "Achievements",
+          "type": "text",
+          "value": "▪ Awarded the Capgemini’s “**XtraMile**” for performance and contribution to Campaign ▪ Stream line Campaign Management processes by developing a portal called “**CampaignQ**”"
+        }
+      ]
+    },
+    {
+      "title": "TUV Nord",
+      "fields": [
+        {
+          "id": "f050",
+          "label": "Company Name:",
+          "type": "text",
+          "value": "**TUV Nord**"
+        },
+        {
+          "id": "f051",
+          "label": "From:",
+          "type": "text",
+          "value": "September 2017"
+        },
+        {
+          "id": "f052",
+          "label": "To:",
+          "type": "text",
+          "value": "December 2017"
+        },
+        {
+          "id": "f053",
+          "label": "Duration:",
+          "type": "text",
+          "value": "4 Months"
+        },
+        {
+          "id": "f054",
+          "label": "Designation:",
+          "type": "text",
+          "value": "CORPORATE COMMUNICATIONS SPECIALIST"
+        },
+        {
+          "id": "f055",
+          "label": "Responsibilities",
+          "type": "text",
+          "value": "The role entails coordinating with teams, consultants, and vendors to develop marketing collaterals. It also involves managing social media, updating websites, and staying updated with emerging trends. Conducting competitor analysis and coordinating with branch offices for local office branding."
+        },
+        {
+          "id": "f056",
+          "label": "Achievements",
+          "type": "text",
+          "value": "• Chennai** Office Banding** • Initiated the process of** developing an Android App for TUV Academy** • Successfully executed an** Industrial Exhibition**"
+        }
+      ]
+    },
+    {
+      "title": "LLOYD'S REGISTER",
+      "fields": [
+        {
+          "id": "f057",
+          "label": "Company Name:",
+          "type": "text",
+          "value": "**LLOYD'S REGISTER**"
+        },
+        {
+          "id": "f058",
+          "label": "From:",
+          "type": "text",
+          "value": "January 2016"
+        },
+        {
+          "id": "f059",
+          "label": "To:",
+          "type": "text",
+          "value": "July 2017"
+        },
+        {
+          "id": "f060",
+          "label": "Duration:",
+          "type": "text",
+          "value": "1 Year 7 Months"
+        },
+        {
+          "id": "f061",
+          "label": "Designation:",
+          "type": "text",
+          "value": "MARKETING COMMUNICATIONS OFFICER"
+        },
+        {
+          "id": "f062",
+          "label": "Responsibilities",
+          "type": "text",
+          "value": "Collaborate with regional marketing managers (Aus, India, MEA) to implement digital marketing plans. Create tailored content with the Global MarComms team, oversee drip campaigns, manage social media (Facebook, LinkedIn) in MEA, handle digital marketing calendar, utilize analytics tools, and manage agency relationships (budgeting, timelines)."
+        },
+        {
+          "id": "f063",
+          "label": "Achievements",
+          "type": "text",
+          "value": "▪ Increased traffic to 8 multilingual websites by** average ±200%** sourced from multiple channels organic, email marketing, back linking and more ▪** Managed SEO projects serving 5 markets** in cooperation with 4 SEO agencies"
+        }
+      ]
+    },
+    {
+      "title": "SHAVO TECHNOLOGIES PVT. LTD.",
+      "fields": [
+        {
+          "id": "f064",
+          "label": "Company Name:",
+          "type": "text",
+          "value": "**SHAVO TECHNOLOGIES PVT. LTD.**"
+        },
+        {
+          "id": "f065",
+          "label": "From:",
+          "type": "text",
+          "value": "September 2014"
+        },
+        {
+          "id": "f066",
+          "label": "To:",
+          "type": "text",
+          "value": "December 2015"
+        },
+        {
+          "id": "f067",
+          "label": "Duration:",
+          "type": "text",
+          "value": "1 Year 4 Months"
+        },
+        {
+          "id": "f068",
+          "label": "Designation:",
+          "type": "text",
+          "value": "MARKETING COORDINATOR"
+        },
+        {
+          "id": "f069",
+          "label": "Responsibilities",
+          "type": "text",
+          "value": "The digital aspects involve boosting online traffic, optimizing conversion rates, managing campaigns, and utilizing techniques like paid search and social media platforms. Non-digital aspects include creating tools, print ads, calculating ROI, managing relationships, overseeing inventory, and participating in India exhibitions."
+        }
+      ]
+    },
+    {
+      "title": "PERENNIAL TECHNOLOGIES PVT. LTD.",
+      "fields": [
+        {
+          "id": "f070",
+          "label": "Company Name:",
+          "type": "text",
+          "value": "**PERENNIAL TECHNOLOGIES PVT. LTD.**"
+        },
+        {
+          "id": "f071",
+          "label": "From:",
+          "type": "text",
+          "value": "August 2013"
+        },
+        {
+          "id": "f072",
+          "label": "To:",
+          "type": "text",
+          "value": "August 2014"
+        },
+        {
+          "id": "f073",
+          "label": "Duration:",
+          "type": "text",
+          "value": "1 Year 1 Months"
+        },
+        {
+          "id": "f074",
+          "label": "Designation:",
+          "type": "text",
+          "value": "TM MARKETING COMMUNICATION"
+        },
+        {
+          "id": "f075",
+          "label": "Responsibilities",
+          "type": "text",
+          "value": "Develop strategies to drive online traffic, improve website conversion rate, manage digital marketing campaigns, utilize paid search and social media platforms, oversee social media strategy, manage customer database, PR, and mass mailing, run brand/product campaigns, plan and budget digital marketing, evaluate customer research, market conditions, and competitor data."
+        }
+      ]
+    },
+    {
+      "title": "Training & certifications",
+      "fields": [
+        {
+          "id": "f076",
+          "label": "Row 1 · Label",
+          "type": "text",
+          "value": "**COURSE NAME**"
+        },
+        {
+          "id": "f077",
+          "label": "Row 1 · Details",
+          "type": "text",
+          "value": "**PLACE**"
+        },
+        {
+          "id": "f078",
+          "label": "Row 2 · Label",
+          "type": "text",
+          "value": "**Salesforce Pardot Specialist By Salesforce**"
+        },
+        {
+          "id": "f079",
+          "label": "Row 2 · Details",
+          "type": "text",
+          "value": "Salesforce Pardot Specialist By Salesforce"
+        },
+        {
+          "id": "f080",
+          "label": "Row 3 · Label",
+          "type": "text",
+          "value": "**AdWords Search Certification By Google**"
+        },
+        {
+          "id": "f081",
+          "label": "Row 3 · Details",
+          "type": "text",
+          "value": "AdWords Search Certification By Google"
+        },
+        {
+          "id": "f082",
+          "label": "Row 4 · Label",
+          "type": "text",
+          "value": "**Braze Certified Practitioner By Braze**"
+        },
+        {
+          "id": "f083",
+          "label": "Row 4 · Details",
+          "type": "text",
+          "value": "Braze Certified Practitioner By Braze"
+        },
+        {
+          "id": "f084",
+          "label": "Row 5 · Label",
+          "type": "text",
+          "value": "**Segment Certified Marketer By Twilio Segment**"
+        },
+        {
+          "id": "f085",
+          "label": "Row 5 · Details",
+          "type": "text",
+          "value": "Segment Certified Marketer By Twilio Segment"
+        },
+        {
+          "id": "f086",
+          "label": "Row 6 · Label",
+          "type": "text",
+          "value": "**Exploring and Preparing Your Data with BigQuery By Google**"
+        },
+        {
+          "id": "f087",
+          "label": "Row 6 · Details",
+          "type": "text",
+          "value": "Exploring and Preparing Your Data with BigQuery By Google"
+        },
+        {
+          "id": "f088",
+          "label": "Row 7 · Label",
+          "type": "text",
+          "value": "**Salesforce Pardot Specialist By Salesforce**"
+        },
+        {
+          "id": "f089",
+          "label": "Row 7 · Details",
+          "type": "text",
+          "value": "Salesforce Pardot Specialist By Salesforce"
+        },
+        {
+          "id": "f090",
+          "label": "Row 8 · Label",
+          "type": "text",
+          "value": "**Integrated digital marketing**"
+        },
+        {
+          "id": "f091",
+          "label": "Row 8 · Details",
+          "type": "text",
+          "value": "Learning Catalyst (KP, Pune)"
+        }
+      ]
+    },
+    {
+      "title": "Technical skills",
+      "fields": [
+        {
+          "id": "f092",
+          "label": "Row 1 · Label",
+          "type": "text",
+          "value": "**Web Development**"
+        },
+        {
+          "id": "f093",
+          "label": "Row 1 · Details",
+          "type": "text",
+          "value": "HTML, CSS, AmpScript"
+        },
+        {
+          "id": "f094",
+          "label": "Row 2 · Label",
+          "type": "text",
+          "value": "**Query Language**"
+        },
+        {
+          "id": "f095",
+          "label": "Row 2 · Details",
+          "type": "text",
+          "value": "SQL"
+        },
+        {
+          "id": "f096",
+          "label": "Row 3 · Label",
+          "type": "text",
+          "value": "**CMS Platform**"
+        },
+        {
+          "id": "f097",
+          "label": "Row 3 · Details",
+          "type": "text",
+          "value": "Joomla, Wordpress, Tridion"
+        },
+        {
+          "id": "f098",
+          "label": "Row 4 · Label",
+          "type": "text",
+          "value": "**Email Automaton Platform**"
+        },
+        {
+          "id": "f099",
+          "label": "Row 4 · Details",
+          "type": "text",
+          "value": "Pardot, Mailchimp, Hubspot, Adobe Campaign & SFMC"
+        },
+        {
+          "id": "f100",
+          "label": "Row 5 · Label",
+          "type": "text",
+          "value": "**CRM Platform**"
+        },
+        {
+          "id": "f101",
+          "label": "Row 5 · Details",
+          "type": "text",
+          "value": "Salesforce, Hubspot"
+        },
+        {
+          "id": "f102",
+          "label": "Row 6 · Label",
+          "type": "text",
+          "value": "**Tools**"
+        },
+        {
+          "id": "f103",
+          "label": "Row 6 · Details",
+          "type": "text",
+          "value": "Microsoft Suite (Word, Access, Excel, PowerPoint), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
+        }
+      ]
+    },
+    {
+      "title": "Footer",
+      "fields": [
+        {
+          "id": "f104",
+          "label": "Interests",
+          "type": "text",
+          "value": "Play Tabla | Traveling | Swimming"
+        },
+        {
+          "id": "f105",
+          "label": "My LinkedIn Profile",
+          "type": "text",
+          "value": "My LinkedIn Profile"
+        },
+        {
+          "id": "f106",
+          "label": "My GitHub Profile",
+          "type": "text",
+          "value": "My GitHub Profile"
+        },
+        {
+          "id": "f107",
+          "label": "References note",
+          "type": "text",
+          "value": "References available on request."
+        }
+      ]
+    }
+  ]
+}

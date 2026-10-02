@@ -165,6 +165,12 @@ def remove_continuation_icon(tag):
 def build():
     DEST.mkdir(exist_ok=True)
     for name in ['clean','blue','original','cdp']:
+        if name=='cdp' and (ROOT/'content/cdp.json').exists():
+            from editor_model import render
+            data=json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8'))
+            (DEST/'cdp.html').write_text(render(data),encoding='utf-8')
+            print('Built cdp.html from visual editor content')
+            continue
         md=(ROOT/'content'/f'{name}.md').read_text(encoding='utf-8')
         values={}
         pattern=r'^## ([\w-]+)[^\n]*\n(.*?)(?=^## |\Z)'
@@ -291,4 +297,3 @@ def build():
     (DEST/'.nojekyll').write_text('',encoding='utf-8')
 
 if __name__=='__main__':build()
-

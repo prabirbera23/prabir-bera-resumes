@@ -1,4 +1,4 @@
-# Prabir Bera — three resume designs
+# Prabir Bera — resume designs
 
 The published site contains a landing page and three independent HTML resume designs.
 
@@ -11,6 +11,12 @@ The published site contains a landing page and three independent HTML resume des
 | Clean two-page layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/clean.html) | [clean.md](content/clean.md) |
 | Original grey-sidebar layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/original.html) | [original.md](content/original.md) |
 | Blue two-column layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/blue.html) | [blue.md](content/blue.md) |
+
+## Edit the CDP resume with Resume Studio
+
+Double-click **Start Resume Editor.cmd** to open the private browser-based editor on your computer. Edit complete fields, preview the three-page layout, save local drafts, and publish through a GitHub connection. No hosting account is required. See [editor instructions](editor/README.md).
+
+The CDP version now uses `content/cdp.json`. Its older Markdown file is retained for reference; use the editor for future CDP changes.
 
 ## Edit your resume on GitHub
 

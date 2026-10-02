@@ -30,6 +30,8 @@ def github(path, token, method='GET', body=None):
         if error.code in (401,403):raise ValueError('GitHub could not authorize this connection. Check the token and repository permission.') from None
         if error.code in (409,422):raise ValueError('The published resume changed. Load the latest published version before publishing again.') from None
         raise ValueError('GitHub returned an error. Your local draft is safe.') from None
+    except (urllib.error.URLError, TimeoutError):
+        raise ValueError('This editor cannot reach GitHub. Close the editor, double-click Start Resume Editor.cmd in File Explorer, and try connecting again. Check your internet connection or firewall if it still fails. Your saved draft is safe.') from None
 
 def canonical(data):return json.dumps(data,sort_keys=True,ensure_ascii=False)
 
@@ -145,3 +147,4 @@ if __name__=='__main__':
     try:server.serve_forever()
     except KeyboardInterrupt:pass
     finally:server.token=None;server.server_close()
+

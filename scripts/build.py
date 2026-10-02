@@ -154,25 +154,26 @@ def flow_tables(source, fields, values):
 
 def build():
     DEST.mkdir(exist_ok=True)
-    for name in ['clean','blue','original']:
+    for name in ['clean','blue','original','cdp']:
         md=(ROOT/'content'/f'{name}.md').read_text(encoding='utf-8')
         values={}
         pattern=r'^## ([\w-]+)[^\n]*\n(.*?)(?=^## |\Z)'
         for m in re.finditer(pattern,md,re.M|re.S):
             if m.group(1) in values:raise ValueError('Duplicate field '+m.group(1))
             values[m.group(1)]=m.group(2).strip()
-        if name=='original':
+        if name in ['original','cdp']:
             fields={}
             for part in sorted((ROOT/'templates'/'original-fields').glob('*.json')):
                 fields.update(json.loads(part.read_text(encoding='utf-8')))
         else:
             fields=json.loads((ROOT/'templates'/f'{name}.json').read_text(encoding='utf-8'))
         if set(values)!=set(fields):raise ValueError(f'{name}: missing or unknown field IDs: {set(values)^set(fields)}')
-        source=(ROOT/'templates'/f'{name}.html').read_text(encoding='utf-8')
+        source=(ROOT/'templates'/('original.html' if name=='cdp' else f'{name}.html')).read_text(encoding='utf-8')
+        if name=='cdp':source=re.sub(r'<title>.*?</title>','<title>Prabir Bera | CDP and Marketing Data Resume</title>',source)
         sidebar_changed=False
         for key,field in fields.items():
             text=values[key]
-            if name=='original':replacement=original_typography(field,text) if key.startswith('page-1-') else table_typography(field,text)
+            if name in ['original','cdp']:replacement=original_typography(field,text) if key.startswith('page-1-') else table_typography(field,text)
             elif text==field['text']:
                 if 'glyphs' not in field:replacement=field['original']
                 else:
@@ -189,9 +190,9 @@ def build():
                 replacement='<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+html.escape(text.replace('\n',' '))+'</text>'
                 sidebar_changed |= field.get('sidebar',False)
             source=source.replace('{{'+key+'}}',replacement)
-        if sidebar_changed or name=='original':
+        if sidebar_changed or name in ['original','cdp']:
             source=re.sub(r'<image x="0" y="0" width="210.55" height="792"[^>]*/?>','',source)
-        if name=='original':
+        if name in ['original','cdp']:
             source=flow_tables(source,fields,values)
             source=re.sub(r'<image x="458\.2"[^>]*>', '', source)
             source=re.sub(r'<path d="M 458\.0700 706\.0250[^>]*>\s*</path>', '', source)

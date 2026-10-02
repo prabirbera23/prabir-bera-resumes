@@ -8,6 +8,63 @@ def inline(text):
     text=html.escape(text)
     return re.sub(r'\*\*(.+?)\*\*',r'<strong>\1</strong>',text).replace('\n','<br>')
 
+def original_typography(field, text):
+    """Reflow each printed line in readable fonts, retaining its position."""
+    attrs=field['attrs'].copy()
+    x=float(attrs['x']); y=float(attrs['y']); size=float(attrs['font-size'])
+    if attrs.get('font-family')=='Wingdings':
+        return ''.join('<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in {**attrs,'x':str(g[0]),**(g[2] if len(g)>2 else {})}.items())+'>'+html.escape(g[1])+'</text>' for g in field['glyphs'])
+    sidebar=field.get('sidebar',False)
+    # These two source lines were clipped in the original sidebar artwork.
+    if sidebar and 175<y<210 and text in ['ASSOCIATE','MANAGER']:return ''
+    family='Segoe UI, Arial, sans-serif'
+    if size>=15:
+        family='Georgia, Times New Roman, serif'
+        size*=.92
+        attrs['font-weight']='700' if not sidebar or size>25 else '400'
+        if sidebar and size>25:text=text.replace(' ','')
+    attrs['font-family']=family
+    attrs['font-size']=str(size)
+    attrs['font-style']='normal'
+    attrs['data-max-width']=str(max(15,(196 if sidebar else 594)-x))
+    bullet=''
+    if text.startswith('• '):
+        bullet=f'<text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="{size}" fill="{attrs["fill"]}">•</text>'
+        attrs['x']=str(x+18);attrs['data-max-width']=str(594-x-18)
+        text=text[2:]
+    # Preserve emphasis from the source while switching to natural word spacing.
+    glyphs=field.get('glyphs',[])
+    bold_chars=[];cursor=0
+    if text==field['text'] or field['text'].startswith('• '):
+        for g in glyphs:
+            if g[1]=='•':continue
+            pos=text.find(g[1],cursor)
+            if pos<0:continue
+            weight=(g[2] if len(g)>2 else {}).get('font-weight',field['attrs'].get('font-weight','400'))
+            if weight=='700':bold_chars.append(pos)
+            cursor=pos+1
+    fragments=[];start=0
+    for i in range(len(text)+1):
+        if i==len(text) or (i>start and ((i in bold_chars)!=((i-1) in bold_chars))):
+            segment=html.escape(text[start:i])
+            fragments.append('<tspan font-weight="700">'+segment+'</tspan>' if start in bold_chars else segment)
+            start=i
+    return bullet+'<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+''.join(fragments)+'</text>'
+
+def table_typography(field, text):
+    """Keep each table glyph in its cell while updating the font face."""
+    if text!=field['text']:return original_typography(field,text)
+    pieces=[]
+    for glyph in field['glyphs']:
+        attrs=field['attrs'].copy();attrs['x']=str(glyph[0])
+        if len(glyph)>2:attrs.update(glyph[2])
+        if attrs.get('font-family') not in ['Wingdings','Symbol']:
+            attrs['font-family']='Segoe UI, Arial, sans-serif'
+            if float(attrs['font-size'])>=15:
+                attrs['font-family']='Georgia, Times New Roman, serif'
+        pieces.append('<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+html.escape(glyph[1])+'</text>')
+    return ''.join(pieces)
+
 def build():
     DEST.mkdir(exist_ok=True)
     for name in ['clean','blue','original']:
@@ -28,7 +85,8 @@ def build():
         sidebar_changed=False
         for key,field in fields.items():
             text=values[key]
-            if text==field['text']:
+            if name=='original':replacement=original_typography(field,text) if key.startswith('page-1-') else table_typography(field,text)
+            elif text==field['text']:
                 if 'glyphs' not in field:replacement=field['original']
                 else:
                     pieces=[]
@@ -44,8 +102,10 @@ def build():
                 replacement='<text '+ ' '.join(f'{k}="{html.escape(v,quote=True)}"' for k,v in attrs.items())+'>'+html.escape(text.replace('\n',' '))+'</text>'
                 sidebar_changed |= field.get('sidebar',False)
             source=source.replace('{{'+key+'}}',replacement)
-        if sidebar_changed:
+        if sidebar_changed or name=='original':
             source=re.sub(r'<image x="0" y="0" width="210.55" height="792"[^>]*/?>','',source)
+        if name=='original':
+            source=source.replace('</body>', '<script>function fitResumeText(){document.querySelectorAll("text[data-max-width]").forEach(t=>{const max=+t.dataset.maxWidth;const width=t.getComputedTextLength();if(width>max){t.setAttribute("font-size",(+t.getAttribute("font-size")*max/width).toFixed(3));}});}document.fonts.ready.then(fitResumeText);</script></body>')
         # Keep edited contact text and destinations consistent.
         source=re.sub(r'href="mailto:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="mailto:'+html.escape(html.unescape(m.group(2)),quote=True)+'"'+m.group(1)+m.group(2)+'</a>',source)
         source=re.sub(r'href="tel:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="tel:'+re.sub(r'[^+\d]','',html.unescape(m.group(2)))+'"'+m.group(1)+m.group(2)+'</a>',source)

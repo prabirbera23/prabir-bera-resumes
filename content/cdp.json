@@ -170,73 +170,73 @@
           "id": "f024",
           "label": "Skill group 1",
           "type": "text",
-          "value": "**CDP and activation**"
+          "value": "**Customer Data & Activation**"
         },
         {
           "id": "f025",
           "label": "CDP and activation",
           "type": "text",
-          "value": "Twilio Segment; unified customer profiles; source and destination integration; audience activation; audience exploration"
+          "value": "Twilio Segment (CDP), Unified Customer Profiles, Source & Destination Integration, Audience Activation"
         },
         {
           "id": "f026",
           "label": "Skill group 2",
           "type": "text",
-          "value": "**Engagement and lifecycle**"
+          "value": "**Lifecycle & Engagement Marketing**"
         },
         {
           "id": "f027",
           "label": "Engagement and lifecycle",
           "type": "text",
-          "value": "Braze; onboarding; reactivation; nurture; product launches; retention; loyalty; journey blueprints"
+          "value": "Braze, Journey Blueprints, Automated Onboarding, Reactivation, Nurture Flows, Product Launches, Retention & Loyalty Strategies"
         },
         {
           "id": "f028",
           "label": "Skill group 3",
           "type": "text",
-          "value": "**Data and governance**"
+          "value": "**Data, Analytics & Governance** "
         },
         {
           "id": "f029",
           "label": "Data and governance",
           "type": "text",
-          "value": "Data quality; governance; consent management; data dictionaries; BigQuery; web analytics"
+          "value": "Data Quality, Data Governance, Consent Management, Data Dictionaries, BigQuery, Web Analytics"
         },
         {
           "id": "f030",
           "label": "Skill group 4",
           "type": "text",
-          "value": "**CRM and automation**"
+          "value": "**CRM & Marketing Automation** "
         },
         {
           "id": "f031",
           "label": "CRM and automation",
           "type": "text",
-          "value": "Salesforce CRM; HubSpot; Salesforce Marketing Cloud; Pardot"
+          "value": "Salesforce CRM, HubSpot, Salesforce Marketing Cloud, Pardot"
         },
         {
           "id": "f032",
           "label": "Skill group 5",
           "type": "text",
-          "value": "**Advertising and tracking**"
+          "value": "**Digital Advertising & Tracking** "
         },
         {
           "id": "f033",
           "label": "Advertising and tracking",
           "type": "text",
-          "value": "Google Tag Manager; Meta; Google Ads; LinkedIn; Microsoft Advertising; Permutive"
+          "value": "Google Tag Manager (GTM), Permutive, Meta Ads, Google Ads, LinkedIn Campaign Manager, Microsoft Advertising"
         },
         {
           "id": "f034",
           "label": "Skill group 6",
           "type": "text",
-          "value": "**Product and enablement**"
+          "value": "**Product Management & Enablement**"
         },
         {
           "id": "f035",
           "label": "Product and enablement",
           "type": "text",
-          "value": "Associate product ownership; stakeholder collaboration; playbooks; marketer training; campaign briefing"
+          "value": "Product Ownership, Stakeholder Collaboration, Marketer Training & Campaign Briefing"
         }
       ]
     },

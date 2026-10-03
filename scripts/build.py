@@ -299,6 +299,7 @@ def build():
     (DEST/'cdp-clean.html').write_text(render_clean_cdp(cdp_data),encoding='utf-8')
     print('Built cdp-clean.html from shared CDP editor content')
     (DEST/'index.html').write_text((ROOT/'templates'/'index.html').read_text(encoding='utf-8'),encoding='utf-8')
+    (DEST/'cover-letter-cdp-ai.html').write_text((ROOT/'templates/cover-letter-cdp-ai.html').read_text(encoding='utf-8'),encoding='utf-8')
     (DEST/'.nojekyll').write_text('',encoding='utf-8')
 
 if __name__=='__main__':build()

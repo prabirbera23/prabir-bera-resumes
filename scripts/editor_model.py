@@ -40,6 +40,7 @@ def render(data):
             def replace(m):
                 value=field['value']
                 if field['type']=='list':body=''.join('<li>'+rich(v)+'</li>' for v in value)
+                elif m['tag']=='ul':body=''.join('<li>'+rich(re.sub(r'^\s*(?:[•-]|\*(?!\*))\s+','',v))+'</li>' for v in value.splitlines() if v.strip())
                 elif m['tag']=='text':body=html.escape(value.replace('**',''))
                 else:body=rich(value)
                 return m[1]+body+m[3]
@@ -47,3 +48,4 @@ def render(data):
             if count!=1:raise ValueError('Template field missing: '+field['id'])
     script='''<script>function refreshResume(){const d=new Date();document.getElementById('resume-updated-date').textContent='Resume Updated on: '+d.toLocaleString('en-US',{month:'long'})+', '+d.getFullYear();document.querySelectorAll('text[data-max-width]').forEach(t=>{const w=t.getComputedTextLength(),m=+t.dataset.maxWidth;if(w>m)t.setAttribute('font-size',+t.getAttribute('font-size')*m/w);});}document.fonts.ready.then(refreshResume);window.addEventListener('beforeprint',refreshResume);</script>'''
     return source.replace('</body>',script+'</body>')
+

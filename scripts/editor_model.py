@@ -1,4 +1,5 @@
 """Shared validation and rendering for the private resume editor."""
+from resume_naming import apply_resume_naming
 import html
 import json
 import re
@@ -52,5 +53,5 @@ def render(data):
             source,count=re.subn(pattern,replace,source,count=1,flags=re.S)
             if count!=1:raise ValueError('Template field missing: '+field['id'])
     script='''<script>function refreshResume(){const d=new Date();document.getElementById('resume-updated-date').textContent='Resume Updated on: '+d.toLocaleString('en-US',{month:'long'})+', '+d.getFullYear();document.querySelectorAll('text[data-max-width]').forEach(t=>{const w=t.getComputedTextLength(),m=+t.dataset.maxWidth;if(w>m)t.setAttribute('font-size',+t.getAttribute('font-size')*m/w);});}document.fonts.ready.then(refreshResume);window.addEventListener('beforeprint',refreshResume);</script>'''
-    return source.replace('</body>',script+'</body>')
+    return apply_resume_naming(source.replace('</body>',script+'</body>'))
 

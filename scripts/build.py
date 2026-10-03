@@ -1,6 +1,7 @@
 """Build three resume designs from Markdown. Requires only Python 3."""
 from pathlib import Path
 from cdp_layout import compact_cdp
+from resume_naming import apply_resume_naming
 import html, re, json
 ROOT=Path(__file__).resolve().parents[1]
 DEST=ROOT/'site'
@@ -291,7 +292,7 @@ def build():
         source=re.sub(r'href="tel:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="tel:'+re.sub(r'[^+\d]','',html.unescape(m.group(2)))+'"'+m.group(1)+m.group(2)+'</a>',source)
         if name=='cdp':
             source=compact_cdp(source).replace('Original design · 3 pages','CDP design · 3 pages')
-        (DEST/f'{name}.html').write_text(source,encoding='utf-8')
+        (DEST/f'{name}.html').write_text(apply_resume_naming(source),encoding='utf-8')
         print(f'Built {name}.html ({len(fields)} editable fields)')
     (DEST/'index.html').write_text((ROOT/'templates'/'index.html').read_text(encoding='utf-8'),encoding='utf-8')
     (DEST/'.nojekyll').write_text('',encoding='utf-8')

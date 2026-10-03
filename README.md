@@ -49,3 +49,8 @@ Open `http://localhost:8000`. No packages or build dependencies are needed. HTML
 - `.github/workflows/pages.yml`: builds and publishes GitHub Pages after each commit
 
 Choose **GitHub Actions** under Settings → Pages → Source to enable automatic publishing.
+
+
+## Resume filenames
+
+All four resume designs use `PRABIR_BERA_MAR_TECH_ASSOCIATE_MANAGER_12_YEARS_PUNE_OCT2026` as their PDF filename, with only the uppercase three-letter month and four-digit year changing to the reader's current local month/year. The fixed prefix must remain unchanged for future resumes. Shared `scripts/resume_naming.py` applies this rule to the website build and editor previews; use `apply_resume_naming(html)` in every future resume renderer. The editor's HTML and JSON downloads use the same filename with their respective extensions. Use the browser's **Save as PDF** destination to preserve clickable links and use the suggested filename.

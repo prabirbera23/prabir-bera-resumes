@@ -52,7 +52,7 @@ def render_clean_cdp(data):
     '''
     css+=' .page:last-child .details th,.page:last-child .details td{padding:2px 7px}.training th{width:52%}.page:last-child h2{margin-top:10px}.page>article,.page>table,.page>div,.page>footer,.page>header{flex-shrink:0}'
     header='<header><h1>'+field('f014')+' '+field('f015')+'</h1><p class="headline">'+field('f016')+' '+field('f017')+'</p>'+field('f001','p','class="contact-title"')+'<div class="contact">'+field('f005')+'<a href="mailto:'+fields['f002']['value']+'">'+field('f002')+'</a><a href="tel:'+re.sub(r'[^+\d]','',fields['f003']['value'])+'">'+field('f003')+'</a><a href="https://'+fields['f004']['value']+'">'+field('f004')+'</a></div><div class="badge-row">'+badges+'</div></header>'
-    current='<h2>Professional Experience</h2><article class="job">'+field('f018','h3')+field('f019','p','class="company"')+field('f020','p','class="dates"')+field('f021','p')+bullets('f022')+'</article><h2>Springer Nature Achievements</h2>'+bullets('f023')
+    current='<h2>Professional Experience</h2><article class="job">'+field('f018','h3')+field('f019','p','class="company"')+field('f020','p','class="dates"')+field('f021','p')+bullets('f022')+'</article><h2>ACHIEVEMENTS</h2>'+bullets('f023')
     skills='<h2>Core Skills</h2><div class="skills-grid">'+''.join('<section>'+field(f'f{i:03}','h3')+field(f'f{i+1:03}','p')+'</section>' for i in range(24,35,2))+'</div>'
     education=field('f006','h2')+'<div class="education-grid"><div>'+field('f007','p')+field('f008','p','class="label"')+field('f009','p')+field('f010','p')+'</div><div>'+field('f011','p','class="label"')+field('f012','p')+'<p>Diploma</p>'+field('f013','p')+'</div></div>'
     technical=table(92,104)+table(108,112)

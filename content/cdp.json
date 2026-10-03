@@ -51,7 +51,7 @@
           "id": "f008",
           "label": "Master’s degree — institution",
           "type": "text",
-          "value": "MANAGEMENT (PUNE UNVERSITY)"
+          "value": "MANAGEMENT (PUNE UNIVERSITY)"
         },
         {
           "id": "f009",
@@ -141,13 +141,13 @@
           "label": "Responsibilities",
           "type": "list",
           "value": [
-            "**Drove a 12% increase in journal submissions, conversion, and retention across 4 global markets** by designing automated Braze lifecycle campaigns, including targeted author onboarding, nurture flows, and reactivation workflows.",
-            "**Engineered a unified customer data ecosystem** by integrating 16+ data sources into Twilio Segment and connecting 9+ downstream platforms, enabling highly personalized multi-channel campaigns.",
-            "**Accelerated speed-to-market by 70%** through the creation of reusable campaign playbooks and journey blueprints, drastically simplifying lifecycle campaign deployment for marketing teams.",
-            "**Orchestrated omni-channel engagement** across owned and paid media by seamlessly synchronizing customer profiles across Braze, Salesforce, HubSpot, and key advertising platforms.",
+            "**Increased journal submissions by 12% across four global markets** by designing automated Braze lifecycle campaigns, including targeted author onboarding, nurture flows, and reactivation workflows.",
+            "**Engineered a unified customer data ecosystem** by integrating 16+ data sources into Twilio Segment and connecting 9+ downstream platforms, enabling personalized multichannel campaigns.",
+            "**Reduced campaign setup time by 70%** by creating reusable campaign playbooks and journey blueprints, simplifying lifecycle campaign deployment for marketing teams.",
+            "**Orchestrated omnichannel engagement** across owned and paid media by synchronizing customer profiles across Braze, Salesforce, HubSpot, and key advertising platforms.",
             "**Enhanced data utility and alignment** by building a custom Audience Explorer platform for strategic planning and automating the CDP Data Dictionary to standardize enterprise data definitions.",
             "**Championed data governance, quality, and consent management** in collaboration with engineering and compliance teams, ensuring reliable, compliant data utilization across the marketing ecosystem.",
-            "**Cultivated platform adoption** by delivering technical training, designing standardized briefing templates, and hosting Quarterly Showcases to scale CDP capabilities and streamline campaign requirements."
+            "**Cultivated platform adoption** by delivering technical training, designing standardized briefing templates, and hosting quarterly showcases to scale CDP capabilities and streamline campaign requirements."
           ]
         }
       ]
@@ -159,7 +159,7 @@
           "id": "f023",
           "label": "Achievements (one per line)",
           "type": "text",
-          "value": "• **Selected to pitch our custom CDP Data Product at the annual Springer Nature Marketing Festival**, driving enterprise-wide awareness and cross-department adoption of unified customer data capabilities.\n• **Engineered an automated AI JIRA Agent** utilizing GitHub Copilot and the JIRA Model Context Protocol (MCP) Server, streamlining bulk ticket generation and automated Confluence documentation workflows."
+          "value": "• **Selected to pitch a custom CDP data product at the annual Springer Nature Marketing Festival**, driving enterprise-wide awareness and cross-department adoption of unified customer data capabilities.\n• **Engineered an AI-powered Jira agent** using GitHub Copilot and a Jira Model Context Protocol (MCP) server, streamlining bulk ticket creation and automated Confluence documentation workflows."
         }
       ]
     },
@@ -247,7 +247,7 @@
           "id": "f036",
           "label": "Company / client",
           "type": "text",
-          "value": "**ACCENTURE — Ecommerce Client**"
+          "value": "**ACCENTURE — E-commerce Client**"
         },
         {
           "id": "f037",
@@ -280,8 +280,8 @@
           "value": [
             "Led end-to-end SFMC and Pardot implementations, designing complex Journey Builder workflows and audience segmentation using SQL and Automation Studio.",
             "Built and personalized email and SMS campaigns using Content Builder, AMPscript, and CloudPages (HTML, CSS, JavaScript).",
-            "Provided Technical Leadership and troubleshooting across marketing automation platforms to ensure campaign quality and platform stability.",
-            "Led and mentored a global marketing automation team, overseeing delivery, quality checks, and training of new resources.",
+            "Provided technical leadership and troubleshooting across marketing automation platforms to ensure campaign quality and platform stability.",
+            "Led and mentored a global marketing automation team, overseeing delivery, quality checks, and training of new team members.",
             "Partnered with global stakeholders to support campaign strategy, prototyping, testing, and ongoing operational support."
           ]
         },
@@ -290,10 +290,10 @@
           "label": "Achievements",
           "type": "list",
           "value": [
-            "I was honored to receive the \"Out of The Box Thinker\" Award from the client in recognition of my invaluable contribution to the establishment of a “Knowledge-sharing Hub”.",
-            "I was honored with the \"Star Innovation Individual\" award by Accenture for exceptional innovation and client empowerment.",
-            "I developed an “Automation Error Dashboard” integrating Power BI with SFMC, optimizing Salesforce Marketing Cloud's error resolution and ensuring uninterrupted business operations.",
-            "I developed an SFMC tool for effortlessly finding a Data Extensions within a Business Unit."
+            "Received the client’s **“Out of the Box Thinker” award** for helping establish a knowledge-sharing hub.",
+            "Received Accenture’s **“Star Innovation Individual” award** for innovation and client empowerment.",
+            "Developed an **Automation Error Dashboard** integrating Power BI with SFMC to support automation monitoring and error resolution.",
+            "Built an **SFMC tool to locate data extensions within a business unit**."
           ]
         }
       ]
@@ -305,7 +305,7 @@
           "id": "f043",
           "label": "Company Name:",
           "type": "text",
-          "value": "** CAPGEMINI**"
+          "value": "**CAPGEMINI**"
         },
         {
           "id": "f044",
@@ -323,7 +323,7 @@
           "id": "f046",
           "label": "Duration:",
           "type": "text",
-          "value": "3 Years"
+          "value": "2 Years 11 Months"
         },
         {
           "id": "f047",
@@ -335,13 +335,13 @@
           "id": "f048",
           "label": "Responsibilities",
           "type": "text",
-          "value": "I developed, tested, and executed marketing automation campaigns aligned with client objectives. This included creating drip, nurture, batch, and trigger campaigns, setting up events, building programs, implementing lead scoring systems, and leveraging recipient data for personalized communications."
+          "value": "Developed, tested, and executed marketing automation campaigns aligned with client objectives. Created drip, nurture, batch, and trigger campaigns; configured events; built programs; implemented lead scoring; and used recipient data to personalize communications."
         },
         {
           "id": "f049",
           "label": "Achievements",
           "type": "text",
-          "value": "▪ Awarded the Capgemini’s “**XtraMile**” for performance and contribution to Campaign ▪ Stream line Campaign Management processes by developing a portal called “**CampaignQ**”"
+          "value": "• Received Capgemini’s **“XtraMile” award** for campaign delivery and contributions.\n• Developed **CampaignQ**, a portal that streamlined campaign management processes."
         }
       ]
     },
@@ -370,7 +370,7 @@
           "id": "f053",
           "label": "Duration:",
           "type": "text",
-          "value": "4 Months"
+          "value": "3 Months"
         },
         {
           "id": "f054",
@@ -382,13 +382,13 @@
           "id": "f055",
           "label": "Responsibilities",
           "type": "text",
-          "value": "The role entails coordinating with teams, consultants, and vendors to develop marketing collaterals. It also involves managing social media, updating websites, and staying updated with emerging trends. Conducting competitor analysis and coordinating with branch offices for local office branding."
+          "value": "Coordinated with teams, consultants, and vendors to develop marketing collateral. Managed social media, updated websites, and tracked emerging trends. Conducted competitor analysis and coordinated with branch offices on local office branding."
         },
         {
           "id": "f056",
           "label": "Achievements",
           "type": "text",
-          "value": "• Chennai** Office Banding** • Initiated the process of** developing an Android App for TUV Academy** • Successfully executed an** Industrial Exhibition**"
+          "value": "Coordinated **Chennai office branding**, initiated development of an **Android app for TUV Academy**, and successfully delivered an **industrial exhibition**."
         }
       ]
     },
@@ -417,7 +417,7 @@
           "id": "f060",
           "label": "Duration:",
           "type": "text",
-          "value": "1 Year 7 Months"
+          "value": "1 Year 6 Months"
         },
         {
           "id": "f061",
@@ -429,13 +429,13 @@
           "id": "f062",
           "label": "Responsibilities",
           "type": "text",
-          "value": "Collaborate with regional marketing managers (Aus, India, MEA) to implement digital marketing plans. Create tailored content with the Global MarComms team, oversee drip campaigns, manage social media (Facebook, LinkedIn) in MEA, handle digital marketing calendar, utilize analytics tools, and manage agency relationships (budgeting, timelines)."
+          "value": "Collaborated with regional marketing managers across Australia, India, and the Middle East and Africa to implement digital marketing plans. Created tailored content with the global marketing communications team, oversaw drip campaigns, managed Facebook and LinkedIn activity in the Middle East and Africa, maintained the digital marketing calendar, used analytics tools, and managed agency budgets and timelines."
         },
         {
           "id": "f063",
           "label": "Achievements",
           "type": "text",
-          "value": "▪ Increased traffic to 8 multilingual websites by** average ±200%** sourced from multiple channels organic, email marketing, back linking and more ▪** Managed SEO projects serving 5 markets** in cooperation with 4 SEO agencies"
+          "value": "• Increased traffic to **eight multilingual websites by approximately 200% on average** through organic search, email marketing, backlinking, and other channels.\n• Managed **SEO projects across five markets** in collaboration with **four SEO agencies**."
         }
       ]
     },
@@ -464,7 +464,7 @@
           "id": "f067",
           "label": "Duration:",
           "type": "text",
-          "value": "1 Year 4 Months"
+          "value": "1 Year 3 Months"
         },
         {
           "id": "f068",
@@ -476,7 +476,7 @@
           "id": "f069",
           "label": "Responsibilities",
           "type": "text",
-          "value": "The digital aspects involve boosting online traffic, optimizing conversion rates, managing campaigns, and utilizing techniques like paid search and social media platforms. Non-digital aspects include creating tools, print ads, calculating ROI, managing relationships, overseeing inventory, and participating in India exhibitions."
+          "value": "Managed digital marketing activities to increase website traffic and improve conversion rates, including campaigns, paid search, and social media. Created marketing tools and print advertisements, calculated ROI, managed relationships and inventory, and coordinated participation in exhibitions in India."
         }
       ]
     },
@@ -505,7 +505,7 @@
           "id": "f073",
           "label": "Duration:",
           "type": "text",
-          "value": "1 Year 1 Months"
+          "value": "1 Year"
         },
         {
           "id": "f074",
@@ -517,7 +517,7 @@
           "id": "f075",
           "label": "Responsibilities",
           "type": "text",
-          "value": "Develop strategies to drive online traffic, improve website conversion rate, manage digital marketing campaigns, utilize paid search and social media platforms, oversee social media strategy, manage customer database, PR, and mass mailing, run brand/product campaigns, plan and budget digital marketing, evaluate customer research, market conditions, and competitor data."
+          "value": "Developed strategies to increase website traffic and improve conversion rates. Managed digital marketing campaigns, paid search, social media, customer databases, PR, and bulk email communications. Delivered brand and product campaigns, planned digital marketing budgets, and evaluated customer research, market conditions, and competitor data."
         }
       ]
     },
@@ -534,13 +534,13 @@
           "id": "f077",
           "label": "Row 1 · Details",
           "type": "text",
-          "value": "**PLACE**"
+          "value": "**PROVIDER**"
         },
         {
           "id": "f078",
           "label": "Row 2 · Label",
           "type": "text",
-          "value": "**Segment Certified Marketer**\n"
+          "value": "**Segment Certified Marketer**"
         },
         {
           "id": "f079",
@@ -612,7 +612,7 @@
           "id": "f090",
           "label": "Row 8 · Label",
           "type": "text",
-          "value": "**Integrated digital marketing**"
+          "value": "**Integrated Digital Marketing**"
         },
         {
           "id": "f091",
@@ -641,49 +641,49 @@
           "id": "f094",
           "label": "Row 2 · Label",
           "type": "text",
-          "value": "**Query Language/ Scripting Language**"
+          "value": "**Query & Scripting Languages**"
         },
         {
           "id": "f095",
           "label": "Row 2 · Details",
           "type": "text",
-          "value": "SQL, BigQuery, AMPscript, Liquid"
+          "value": "SQL, AMPscript, Liquid"
         },
         {
           "id": "f096",
           "label": "Row 3 · Label",
           "type": "text",
-          "value": "**CMS Platform**"
+          "value": "**CMS Platforms**"
         },
         {
           "id": "f097",
           "label": "Row 3 · Details",
           "type": "text",
-          "value": "Joomla, Wordpress, Tridion"
+          "value": "Joomla, WordPress, Tridion"
         },
         {
           "id": "f098",
           "label": "Row 4 · Label",
           "type": "text",
-          "value": "**Email Automaton Platform**"
+          "value": "**Email Automation Platforms**"
         },
         {
           "id": "f099",
           "label": "Row 4 · Details",
           "type": "text",
-          "value": "Braze, Pardot, Mailchimp, Hubspot, Adobe Campaign & SFMC"
+          "value": "Braze, Pardot, Mailchimp, HubSpot, Adobe Campaign & SFMC"
         },
         {
           "id": "f100",
           "label": "Row 5 · Label",
           "type": "text",
-          "value": "**CRM Platform**"
+          "value": "**CRM Platforms**"
         },
         {
           "id": "f101",
           "label": "Row 5 · Details",
           "type": "text",
-          "value": "Salesforce, Hubspot"
+          "value": "Salesforce, HubSpot"
         },
         {
           "id": "f102",
@@ -695,19 +695,19 @@
           "id": "f103",
           "label": "Row 6 · Details",
           "type": "text",
-          "value": "Zapier, JIRA, Adobe Workfront, Postman, Microsoft Suite (Word, Access, Excel, PowerPoint, Power Automate), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
+          "value": "Zapier, Jira, Adobe Workfront, Postman, Microsoft Suite (Word, Access, Excel, PowerPoint, Power Automate), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
         },
         {
           "id": "f108",
           "label": "Row 7 · Label",
           "type": "text",
-          "value": "**Data Warehouse**"
+          "value": "**Cloud & Data Platforms**"
         },
         {
           "id": "f109",
           "label": "Row 7 · Details",
           "type": "text",
-          "value": "Google Cloud Platform (GCP), Snowflake"
+          "value": "Google Cloud Platform (GCP), BigQuery, Snowflake"
         },
         {
           "id": "f110",
@@ -730,7 +730,7 @@
           "id": "f104",
           "label": "Interests",
           "type": "text",
-          "value": "Play Tabla | Traveling | Swimming"
+          "value": "Playing tabla | Traveling | Swimming"
         },
         {
           "id": "f105",

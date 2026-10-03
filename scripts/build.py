@@ -294,6 +294,10 @@ def build():
             source=compact_cdp(source).replace('Original design · 3 pages','CDP design · 3 pages')
         (DEST/f'{name}.html').write_text(apply_resume_naming(source),encoding='utf-8')
         print(f'Built {name}.html ({len(fields)} editable fields)')
+    from cdp_clean import render_clean_cdp
+    cdp_data=json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8'))
+    (DEST/'cdp-clean.html').write_text(render_clean_cdp(cdp_data),encoding='utf-8')
+    print('Built cdp-clean.html from shared CDP editor content')
     (DEST/'index.html').write_text((ROOT/'templates'/'index.html').read_text(encoding='utf-8'),encoding='utf-8')
     (DEST/'.nojekyll').write_text('',encoding='utf-8')
 

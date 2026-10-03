@@ -641,13 +641,13 @@
           "id": "f094",
           "label": "Row 2 · Label",
           "type": "text",
-          "value": "**Query Language**"
+          "value": "**Query Language/ Scripting Language**"
         },
         {
           "id": "f095",
           "label": "Row 2 · Details",
           "type": "text",
-          "value": "SQL"
+          "value": "SQL, AMPscript, Liquid"
         },
         {
           "id": "f096",
@@ -671,7 +671,7 @@
           "id": "f099",
           "label": "Row 4 · Details",
           "type": "text",
-          "value": "Pardot, Mailchimp, Hubspot, Adobe Campaign & SFMC"
+          "value": "Braze, Pardot, Mailchimp, Hubspot, Adobe Campaign & SFMC"
         },
         {
           "id": "f100",
@@ -695,7 +695,7 @@
           "id": "f103",
           "label": "Row 6 · Details",
           "type": "text",
-          "value": "Microsoft Suite (Word, Access, Excel, PowerPoint), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
+          "value": "Zapier, JIRA, Adobe Workfront, Postman, Microsoft Suite (Word, Access, Excel, PowerPoint, Power Automate), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
         }
       ]
     },

@@ -182,13 +182,13 @@
           "id": "f026",
           "label": "Skill group 2",
           "type": "text",
-          "value": "**Lifecycle & Engagement Marketing**"
+          "value": "**Lifecycle & Engagement**"
         },
         {
           "id": "f027",
           "label": "Engagement and lifecycle",
           "type": "text",
-          "value": "Braze, Journey Blueprints, Automated Onboarding, Reactivation, Nurture Flows, Product Launches, Retention & Loyalty Strategies"
+          "value": "Braze, Journey Blueprints, Automated Onboarding, Reactivation, Product Launches, Loyalty Strategies"
         },
         {
           "id": "f028",
@@ -212,7 +212,7 @@
           "id": "f031",
           "label": "CRM and automation",
           "type": "text",
-          "value": "Salesforce CRM, HubSpot, Salesforce Marketing Cloud, Pardot"
+          "value": "Salesforce CRM, HubSpot, Salesforce Marketing Cloud, Pardot, Braze, SAP Marketing Cloud"
         },
         {
           "id": "f032",
@@ -224,13 +224,13 @@
           "id": "f033",
           "label": "Advertising and tracking",
           "type": "text",
-          "value": "Google Tag Manager (GTM), Permutive, Meta Ads, Google Ads, LinkedIn Campaign Manager, Microsoft Advertising"
+          "value": "Meta Ads, Google Ads, LinkedIn Campaign Manager, Microsoft Advertising, Google Tag Manager (GTM), Permutive"
         },
         {
           "id": "f034",
           "label": "Skill group 6",
           "type": "text",
-          "value": "**Product Management & Enablement**"
+          "value": "**Product Management**"
         },
         {
           "id": "f035",

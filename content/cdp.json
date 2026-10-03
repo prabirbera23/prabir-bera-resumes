@@ -712,13 +712,13 @@
           "id": "f105",
           "label": "My LinkedIn Profile",
           "type": "text",
-          "value": "My LinkedIn Profile"
+          "value": "Scan for My LinkedIn Profile"
         },
         {
           "id": "f106",
           "label": "My GitHub Profile",
           "type": "text",
-          "value": "My GitHub Portfolio"
+          "value": "Scan for My GitHub Portfolio"
         },
         {
           "id": "f107",

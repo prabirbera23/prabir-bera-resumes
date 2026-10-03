@@ -50,7 +50,7 @@ class EditorServer(ThreadingHTTPServer):
         self.lock=threading.Lock()
         self.schema=json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8'))
     def state(self):
-        return {'data':self.schema,'draft':json.loads(DRAFT.read_text(encoding='utf-8')) if DRAFT.exists() else None,'connected':bool(self.token)}
+        return {'data':self.schema,'draft':validate(json.loads(DRAFT.read_text(encoding='utf-8')),self.schema) if DRAFT.exists() else None,'connected':bool(self.token)}
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self,*args):pass

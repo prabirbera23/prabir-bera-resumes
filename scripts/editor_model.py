@@ -13,6 +13,11 @@ def validate(data, schema=None):
     if len(data.get('groups', [])) != len(schema['groups']):
         raise ValueError('The resume sections do not match this template.')
     for group, original in zip(data['groups'], schema['groups']):
+        if group.get('title') == 'Technical skills' and isinstance(group.get('fields'), list):
+            present={f.get('id') for f in group['fields'] if isinstance(f,dict)}
+            for expected in original['fields']:
+                if expected['id'] in ('f108','f109','f110','f111') and expected['id'] not in present:
+                    group['fields'].append(dict(expected))
         if group.get('title') != original['title'] or len(group.get('fields', [])) != len(original['fields']):
             raise ValueError('The resume fields do not match this template.')
         for field, expected in zip(group['fields'], original['fields']):

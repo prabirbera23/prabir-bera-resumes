@@ -696,6 +696,30 @@
           "label": "Row 6 · Details",
           "type": "text",
           "value": "Zapier, JIRA, Adobe Workfront, Postman, Microsoft Suite (Word, Access, Excel, PowerPoint, Power Automate), Power BI, Photoshop, Dreamweaver, InDesign, Premiere"
+        },
+        {
+          "id": "f108",
+          "label": "Row 7 · Label",
+          "type": "text",
+          "value": "**Data Warehouse**"
+        },
+        {
+          "id": "f109",
+          "label": "Row 7 · Details",
+          "type": "text",
+          "value": "GCP, Snowflake"
+        },
+        {
+          "id": "f110",
+          "label": "Row 8 · Label",
+          "type": "text",
+          "value": "**AI Tools**"
+        },
+        {
+          "id": "f111",
+          "label": "Row 8 · Details",
+          "type": "text",
+          "value": "ChatGPT, Codex, Claude AI, Claude Code"
         }
       ]
     },
@@ -730,3 +754,4 @@
     }
   ]
 }
+

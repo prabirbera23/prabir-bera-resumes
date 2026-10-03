@@ -159,7 +159,7 @@
           "id": "f023",
           "label": "Achievements (one per line)",
           "type": "text",
-          "value": "[Achievement 1 — to be added]\n[Achievement 2 — to be added]"
+          "value": "• **Selected to pitch our custom CDP Data Product at the annual Springer Nature Marketing Festival**, driving enterprise-wide awareness and cross-department adoption of unified customer data capabilities.\n• **Engineered an automated AI JIRA Agent** utilizing GitHub Copilot and the JIRA Model Context Protocol (MCP) Server, streamlining bulk ticket generation and automated Confluence documentation workflows."
         }
       ]
     },

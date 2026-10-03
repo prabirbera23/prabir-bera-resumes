@@ -647,7 +647,7 @@
           "id": "f095",
           "label": "Row 2 · Details",
           "type": "text",
-          "value": "SQL, AMPscript, Liquid"
+          "value": "SQL, BigQuery, AMPscript, Liquid"
         },
         {
           "id": "f096",
@@ -707,7 +707,7 @@
           "id": "f109",
           "label": "Row 7 · Details",
           "type": "text",
-          "value": "GCP, Snowflake"
+          "value": "Google Cloud Platform (GCP), Snowflake"
         },
         {
           "id": "f110",
@@ -719,7 +719,7 @@
           "id": "f111",
           "label": "Row 8 · Details",
           "type": "text",
-          "value": "ChatGPT, Codex, Claude AI, Claude Code"
+          "value": "ChatGPT, Codex, Claude AI, Claude Code, Perplexity AI"
         }
       ]
     },
@@ -754,4 +754,3 @@
     }
   ]
 }
-

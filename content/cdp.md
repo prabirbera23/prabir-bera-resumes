@@ -980,7 +980,7 @@ Google Tag Manager; Meta; Google Ads; LinkedIn; Microsoft Advertising; Permutive
 Associate product ownership; stakeholder collaboration; playbooks; marketer training; campaign briefing
 
 
-## springer-achievements
+## Achievements
 
 [Achievement 1 — to be added]
 [Achievement 2 — to be added]

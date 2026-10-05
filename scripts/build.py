@@ -292,6 +292,9 @@ def build():
         source=re.sub(r'href="tel:[^"]*"([^>]*>)([^<]+)</a>',lambda m:'href="tel:'+re.sub(r'[^+\d]','',html.unescape(m.group(2)))+'"'+m.group(1)+m.group(2)+'</a>',source)
         if name=='cdp':
             source=compact_cdp(source).replace('Original design · 3 pages','CDP design · 3 pages')
+        if name=='original':
+            from marketing_original import add_shared_original_sections
+            source=add_shared_original_sections(source,json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8')))
         if name=='clean':
             from marketing_clean import add_shared_sections
             source=add_shared_sections(source,json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8')))

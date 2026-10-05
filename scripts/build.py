@@ -295,6 +295,9 @@ def build():
         if name=='original':
             from marketing_original import add_shared_original_sections
             source=add_shared_original_sections(source,json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8')))
+        if name=='blue':
+            from marketing_blue import add_shared_blue_sections
+            source=add_shared_blue_sections(source,json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8')))
         if name=='clean':
             from marketing_clean import add_shared_sections
             source=add_shared_sections(source,json.loads((ROOT/'content/cdp.json').read_text(encoding='utf-8')))

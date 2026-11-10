@@ -20,6 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Build resumes from Markdown
         run: python scripts/build.py
+      - name: Build Ooredoo-targeted CDP engineer resume
+        run: python scripts/build_cdp_engineer.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

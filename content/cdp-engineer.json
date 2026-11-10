@@ -43,7 +43,7 @@
   "field-042": "Corporate Communications Specialist",
   "field-043": "Sep 2017–Dec 2017",
   "field-044": "TÜV Nord",
-  "field-045": "Coordinated with teams, consultants and vendors to develop marketing collateral; managed social media and website updates, conducted competitor analysis and coordinated branch-office branding. Initiated an Android app for TUV Academy and supported an industrial exhibition.",
+  "field-045": "Coordinated with teams, consultants and vendors to develop marketing collateral; managed social media and website updates, conducted competitor analysis and coordinated branch-office branding. Coordinated Chennai office branding, initiated an Android app for TUV Academy and supported an industrial exhibition.",
   "field-046": "Marketing Communications Officer",
   "field-047": "Jan 2016–Jul 2017",
   "field-048": "Lloyd’s Register",
@@ -90,5 +90,19 @@
   "field-089": "Interests",
   "field-090": "Playing tabla · Traveling · Swimming",
   "field-091": "References",
-  "field-092": "References available on request."
+  "field-092": "References available on request.",
+  "field-093": "Core Skills",
+  "field-094": "Customer Data & Activation",
+  "field-095": "Twilio Segment (CDP), unified customer profiles, source and destination integration, identity resolution, audience activation",
+  "field-096": "Lifecycle & Engagement",
+  "field-097": "Braze, journey blueprints, automated onboarding, reactivation, product launches, loyalty strategies",
+  "field-098": "Data, Analytics & Governance",
+  "field-099": "Data quality, data governance, consent management, data dictionaries, BigQuery, web analytics",
+  "field-100": "CRM & Marketing Automation",
+  "field-101": "Salesforce CRM, HubSpot, Salesforce Marketing Cloud, Pardot, Braze, SAP Marketing Cloud",
+  "field-102": "Digital Advertising & Tracking",
+  "field-103": "Meta Ads, Google Ads, LinkedIn Campaign Manager, Microsoft Advertising, Google Tag Manager (GTM), Permutive",
+  "field-104": "Product Management",
+  "field-105": "Product ownership, stakeholder collaboration, marketer training and campaign briefing"
 }
+

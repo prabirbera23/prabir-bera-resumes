@@ -17,7 +17,7 @@ def build():
     values = json.loads(CONTENT.read_text(encoding="utf-8"))
     source = TEMPLATE.read_text(encoding="utf-8")
     import re
-    placeholders = set(re.findall(r"\\{\\{(field-\\d{3})\\}\\}", source))
+    placeholders = set(re.findall(r"\{\{(field-\d{3})\}\}", source))
     if placeholders != set(values):
         missing = placeholders - set(values)
         unused = set(values) - placeholders

@@ -90,7 +90,7 @@ def build():
             raise ValueError("All resume field values must be text.")
         source = source.replace("{{" + key + "}}", rich(value))
     source = source.replace("<title>Prabir Bera | Marketing Automation</title>",
-                            "<title>Prabir Bera | Marketing Technology Product Engineer</title>")
+                            "<title>Prabir Bera | Customer Data &amp; MarTech Integrations</title>")
     source = source.replace('href="mailto:Prabirjob23@gmail.com"',
                             'href="mailto:' + values["field-005"] + '"')
     source = source.replace('href="tel:+919975288822"',

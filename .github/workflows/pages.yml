@@ -22,6 +22,8 @@ jobs:
         run: python scripts/build.py
       - name: Build Ooredoo-targeted CDP engineer resume
         run: python scripts/build_cdp_engineer.py
+      - name: Build engineer resume in original CDP layout
+        run: python scripts/build_cdp_engineer_original.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
@@ -36,3 +38,4 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+

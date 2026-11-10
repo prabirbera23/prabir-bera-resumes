@@ -6,7 +6,6 @@ from resume_naming import apply_resume_naming
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / "site"
 TEMPLATE = ROOT / "templates" / "clean.html"
-FIELDS = ROOT / "templates" / "clean.json"
 CONTENT = ROOT / "content" / "cdp-engineer.json"
 
 def rich(value):
@@ -16,10 +15,13 @@ def rich(value):
 
 def build():
     values = json.loads(CONTENT.read_text(encoding="utf-8"))
-    fields = json.loads(FIELDS.read_text(encoding="utf-8"))
-    if set(values) != set(fields):
-        raise ValueError("CDP engineer resume fields do not match the clean template.")
     source = TEMPLATE.read_text(encoding="utf-8")
+    import re
+    placeholders = set(re.findall(r"\\{\\{(field-\\d{3})\\}\\}", source))
+    if placeholders != set(values):
+        missing = placeholders - set(values)
+        unused = set(values) - placeholders
+        raise ValueError(f"CDP engineer template/content mismatch. Missing: {sorted(missing)}; unused: {sorted(unused)}")
     for key, value in values.items():
         if not isinstance(value, str):
             raise ValueError("All resume field values must be text.")

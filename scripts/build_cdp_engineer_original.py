@@ -79,12 +79,10 @@ def build():
     for group in template["groups"]:
         for field in group["fields"]:
             value = values[field["id"]]
-            if isinstance(value, str) and value.startswith("field-"):
-                value = engineer[value]
+            if isinstance(value, str):
+                value = re.sub(r"field-\d{3}", lambda m: engineer[m.group()], value)
             elif isinstance(value, list):
                 value = [engineer[item] for item in value]
-            else:
-                value = re.sub(r"field-\d{3}", lambda m: engineer[m.group()], value)
             field["value"] = value
 
     html = render(template)

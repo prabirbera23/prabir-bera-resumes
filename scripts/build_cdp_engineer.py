@@ -69,7 +69,12 @@ def replace_with_clean_pages(engineer_html, clean_html):
     if not clean_css.startswith(template_css):
         raise ValueError("Could not isolate clean-resume page styling.")
     clean_only_css = scoped_css(clean_css[len(template_css):])
-    return engineer_html.replace("</head>", f"<style>{clean_only_css}</style></head>", 1)
+    engineer_html = engineer_html.replace("</head>", f"<style>{clean_only_css}</style></head>", 1)
+    date_script = ('<script>function updateResumeDate(){const date=new Date();'
+                   'document.getElementById("resume-updated-date").textContent="Resume Updated on: "+'
+                   'date.toLocaleString("en-US",{month:"long"})+", "+date.getFullYear();}'
+                   'updateResumeDate();window.addEventListener("beforeprint",updateResumeDate);</script>')
+    return engineer_html.replace("</body>", date_script + "</body>", 1)
 
 def build():
     values = json.loads(CONTENT.read_text(encoding="utf-8"))

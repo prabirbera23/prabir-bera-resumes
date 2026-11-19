@@ -161,7 +161,7 @@
           "id": "f023",
           "label": "Achievements (one per line)",
           "type": "text",
-          "value": "• **Selected to pitch a custom CDP data product at the annual Springer Nature Marketing Festival**, driving enterprise-wide awareness and cross-department adoption of unified customer data capabilities.\n• **Engineered an AI-powered Jira agent** using GitHub Copilot and a Jira Model Context Protocol (MCP) server, streamlining bulk ticket creation and automated Confluence documentation workflows."
+          "value": "• **Created a Braze AI-powered Data Dictionary** that lets users ask questions about the data model, audience design, campaign planning, and campaign performance, with conversational guidance across additional Braze workflows.\n• **Engineered an AI-powered Jira agent** using GitHub Copilot and a Jira Model Context Protocol (MCP) server, streamlining bulk ticket creation and automated Confluence documentation workflows."
         }
       ]
     },

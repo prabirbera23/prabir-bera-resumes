@@ -1,6 +1,6 @@
 # Prabir Bera — resume designs
 
-The published site contains a landing page and three independent HTML resume designs.
+The published site contains a landing page with three standard resume designs and role-targeted resume versions.
 
 ## View and share your resumes
 
@@ -11,12 +11,13 @@ The published site contains a landing page and three independent HTML resume des
 | Clean two-page layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/clean.html) | [clean.md](content/clean.md) |
 | Original grey-sidebar layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/original.html) | [original.md](content/original.md) |
 | Blue two-column layout | [View resume](https://prabirbera23.github.io/prabir-bera-resumes/blue.html) | [blue.md](content/blue.md) |
+| Braze Lead Developer | [View Braze Resume](https://prabirbera23.github.io/prabir-bera-resumes/braze.html) | [braze.json](content/braze.json) |
 
 ## Edit the CDP resume with Resume Studio
 
 Double-click **Start Resume Editor.cmd** to open the private browser-based editor on your computer. Edit complete fields, preview the three-page layout, save local drafts, and publish through a GitHub connection. No hosting account is required. See [editor instructions](editor/README.md).
 
-The CDP version now uses `content/cdp.json`. Its older Markdown file is retained for reference; use the editor for future CDP changes.
+The CDP version uses `content/cdp.json`. The Braze Resume uses `content/braze.json`, updates page one, and keeps the existing CDP version’s pages two and three. Its older Markdown file is retained for reference; use the editor for future CDP changes.
 
 ## Edit your resume on GitHub
 
@@ -43,7 +44,7 @@ Open `http://localhost:8000`. No packages or build dependencies are needed. HTML
 
 ## Structure
 
-- `content/`: the three editable Markdown resumes
+- `content/`: editable Markdown resumes and the CDP and Braze JSON versions
 - `templates/`: layout templates and original content mapping
 - `scripts/build.py`: converts Markdown content into the three layouts
 - `.github/workflows/pages.yml`: builds and publishes GitHub Pages after each commit
